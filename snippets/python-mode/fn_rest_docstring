@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# Insert ReST style docstring and function definition.
+# name: Python reST function docstring
+# key: defr
+# type: snippet
+# contributor: Gustaf Waldemarson
+# --
+def ${1:name}($2):
+    \"\"\"$3
+    ${2:$(python-args-to-reST-docstring yas-text t)}
+    ${4:${2:$(python-arg-types-to-reST-docstring yas-text t)}
+    }${5:.. Returns:
+    :returns: $6
+    ${7::rtype: $8
+}
+    }\"\"\"
+    ${0:$$(let ((beg yas-snippet-beg)
+	        (end yas-snippet-end))
+	    (yas-expand-snippet
+	      (buffer-substring-no-properties beg end) beg end
+              (quote ((yas-indent-line nil) (yas-wrap-around-region nil))))
+            (delete-trailing-whitespace beg (- end 1)))}

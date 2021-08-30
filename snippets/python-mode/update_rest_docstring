@@ -1,0 +1,38 @@
+# -*- mode: snippet -*-
+# Insert reST style docstring definition.
+# name: Python reST Docstring solo
+# key: dsr
+# type: command
+# condition: 'force-in-comment
+# contributor: Gustaf Waldemarson
+# --
+(let* ((bound (save-excursion
+                (search-backward-regexp
+                 (concat "^[ \t]*"
+                         "def[ \t]+[[:alnum:]_]+"
+                         "(\\(\\(?:.\\|\n\\)*?\\)):")
+                 nil t)))
+       (indent (concat "\n" (make-string (current-column) 32)))
+       (string (replace-regexp-in-string "[\n \t]+" " " (match-string-no-properties 1)))
+       (in-docstring (save-excursion (search-backward "\"\"\"" bound t))))
+  (when bound
+    (with-output-to-string
+      (insert
+       (concat
+        (when (not in-docstring)
+          (concat "\"\"\"" indent))
+        (python-args-to-reST-docstring string nil)
+        indent
+        (python-arg-types-to-reST-docstring string nil)
+        (when (not (string= "" string))
+          indent)
+        ".. Returns:"
+        indent
+        ":return:"
+        indent
+        ":rtype:"
+        indent
+        indent
+        (when (not in-docstring)
+          "\"\"\"")))
+      (delete-trailing-whitespace))))

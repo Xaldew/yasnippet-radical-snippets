@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# Insert reST style class docstring.
+# name: Python reST class docstring
+# key: clsr
+# type: snippet
+# contributor: Gustaf Waldemarson
+# --
+\"\"\"$1
+
+${2:.. Class Variables:
+:cvar
+
+}${3:.. Instance Variables:
+:ivar
+
+}${4:.. Types:
+:vartype
+
+}\"\"\"${0:$$(let ((beg yas-snippet-beg)
+            (end yas-snippet-end))
+	    (delete-trailing-whitespace beg (- end 1)))}
