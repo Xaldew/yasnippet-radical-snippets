@@ -7,8 +7,8 @@ This repository contains a small collection of *radical* snippets for
 # Installation
 
 As this collection has only just been created, for the time being this
-collection will not available on [MELPA](https://melpa.org/). In the meantime,
-you may install it directly from my [personal
+collection is not available on [MELPA](https://melpa.org/). In the meantime, you
+may install it directly from my [personal
 archive](https://gustafwaldemarson.com/elpa/). This can be done by adding the
 following snippet to your `emacs`.
 
@@ -19,6 +19,22 @@ following snippet to your `emacs`.
              '("xaldew" . "https://gustafwaldemarson.com/elpa/"))
 (add-to-list 'package-unsigned-archives "xaldew")
 (package-initialize)
+```
+
+Once that is done, then just refresh the packages and install it with:
+
+* <kbd>M-x package-refresh-contents</kbd>
+* <kbd>M-x package-install yasnippet-snippets</kbd>
+
+
+Alternatively, you can also install the package using e.g.
+[use-package](https://github.com/jwiegley/use-package) with the following
+snippet in your `.emacs`:
+
+```
+  (use-package yasnippet-radical-snippets
+    :ensure t
+    :defer t)
 ```
 
 # Examples
@@ -50,3 +66,13 @@ backend, falling back to regexp based extraction should it fail or not be
 available.
 
 GIF-TODO.
+
+
+# Contributing
+
+If you have a similarly interesting snippet that you think is too complex for a
+general collection, feel free to create an issue or pull-request to discuss it.
+
+If you have found a bug in any of the available snippets and want to report it,
+please provide a minimal example that can reproduce it; these snippets are often
+a bit difficult to debug so please make it as easy as possible for us.
