@@ -51,7 +51,7 @@
   ;; NOTE: we add the symbol `yasnippet-radical-snippets-dir' rather than its
   ;; value, so that yasnippet will automatically find the directory
   ;; after this package is updated (i.e., moves directory).
-  (add-to-list 'yas-snippet-dirs 'yasnippet-snippets-dir t)
+  (add-to-list 'yas-snippet-dirs 'yasnippet-radical-snippets-dir t)
   (yas-load-directory yasnippet-radical-snippets-dir t))
 
 
