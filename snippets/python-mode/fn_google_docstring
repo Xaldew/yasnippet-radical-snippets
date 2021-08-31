@@ -3,6 +3,7 @@
 # name: Python Google style Docstring
 # key: defg
 # type: snippet
+# group: radical
 # contributor: Gustaf Waldemarson
 # --
 def ${1:name}($2):

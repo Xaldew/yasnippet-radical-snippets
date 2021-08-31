@@ -3,6 +3,7 @@
 # name: Python reST function docstring
 # key: defr
 # type: snippet
+# group: radical
 # contributor: Gustaf Waldemarson
 # --
 def ${1:name}($2):

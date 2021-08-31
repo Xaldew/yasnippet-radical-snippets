@@ -3,6 +3,7 @@
 # name: Python reST Docstring solo
 # key: dsr
 # type: command
+# group: radical
 # condition: 'force-in-comment
 # contributor: Gustaf Waldemarson
 # --

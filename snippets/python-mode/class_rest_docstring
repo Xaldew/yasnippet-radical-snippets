@@ -3,6 +3,7 @@
 # name: Python reST class docstring
 # key: clsr
 # type: snippet
+# group: radical
 # contributor: Gustaf Waldemarson
 # --
 \"\"\"$1
