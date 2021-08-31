@@ -50,11 +50,19 @@ caveats listed below.
 
 ### Non-Type Annotated Function - ReST Style
 
-GIF-TODO.
+![ReST Python Style](./img/fn_rest_docstring.gif)
 
 ### Type Annotated Function
 
-IMPL-TODO.
+Requested, but not implemented yet.
+
+### Update Existing Function Arguments
+
+![ReST Python Update](./img/fn_rest_update.gif)
+
+### Python Class Documentation
+
+![Python Class Documentation](./img/class_rest.gif)
 
 ## C/C++
 
