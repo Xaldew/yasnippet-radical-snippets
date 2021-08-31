@@ -73,8 +73,7 @@ This snippet attempts to grab type-information using the
 backend, falling back to regexp based extraction should it fail or not be
 available.
 
-GIF-TODO.
-
+![C++ Function Doxygen](./img/cxx_fn_doxygen.gif)
 
 # Contributing
 

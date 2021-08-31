@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# Insert a (Javadoc) Doxygen style C/C++ style function declaration.
+# name: C/C++ Doxygen Function declaration
+# key: fn
+# type: snippet
+# group: radical
+# contributor: Gustaf Waldemarson
+# --
+/** @brief $5
+    ${3:$(c++-doxy-docstring yas-text (yas-field-value 2) (yas-field-value 1) t)}
+*/
+${1:type} ${2:name}(${3:args})${4: const};
+${0:$$(let ((beg yas-snippet-beg)
+            (end yas-snippet-end))
+	(yas-expand-snippet
+	  (buffer-substring-no-properties beg end) beg end
+          (quote ((yas-indent-line nil) (yas-wrap-around-region nil))))
+        (delete-trailing-whitespace beg (- end 1)))}
