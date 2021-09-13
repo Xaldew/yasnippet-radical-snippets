@@ -37,6 +37,14 @@ snippet in your `.emacs`:
     :defer t)
 ```
 
+For doom emacs:
+
+```elisp
+(package! yasnippet-radical-snippets
+  :recipe (:host github :repo "Xaldew/yasnippet-radical-snippets"
+           :files (:defaults "snippets" "yasnippet-radical-snippets.el")))
+```
+
 # Examples
 
 Below are some examples of the snippets available in this repository, with some
