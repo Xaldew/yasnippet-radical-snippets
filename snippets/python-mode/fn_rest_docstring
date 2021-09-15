@@ -8,8 +8,8 @@
 # --
 def ${1:name}($2):
     \"\"\"$3
-    ${2:$(python-args-to-reST-docstring yas-text t)}
-    ${4:${2:$(python-arg-types-to-reST-docstring yas-text t)}
+    ${2:$(yasnippet-radical-snippets--python-args-to-reST-docstring yas-text t)}
+    ${4:${2:$(yasnippet-radical-snippets--python-types-to-reST-docstring yas-text t)}
     }${5:.. Returns:
     :returns: $6
     ${7::rtype: $8

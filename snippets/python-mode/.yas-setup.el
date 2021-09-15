@@ -7,20 +7,20 @@
 ;;; Code:
 
 
-(defun python-split-args (arg-string)
+(defun yasnippet-radical-snippets--python-split-args (arg-string)
   "Split the python ARG-STRING into ((name, default)..) tuples."
   (mapcar (lambda (x)
              (split-string x "[[:blank:]]*=[[:blank:]]*" t))
           (split-string arg-string "[[:blank:]]*,[[:blank:]]*" t)))
 
 
-(defun python-args-to-reST-docstring (text &optional make-fields)
+(defun yasnippet-radical-snippets--python-args-to-reST-docstring (text &optional make-fields)
   "Return a reST docstring format for the python arguments in TEXT.
 
 Optional argument MAKE-FIELDS will create yasnippet compatible
 field that the can be jumped to upon further expansion."
   (let* ((indent (concat "\n" (make-string (current-column) 32)))
-         (args (python-split-args text))
+         (args (yasnippet-radical-snippets--python-split-args text))
 	 (nr 0)
          (formatted-args
 	  (mapconcat
@@ -39,13 +39,13 @@ field that the can be jumped to upon further expansion."
        indent))))
 
 
-(defun python-arg-types-to-reST-docstring (text &optional make-fields)
+(defun yasnippet-radical-snippets--python-types-to-reST-docstring (text &optional make-fields)
   "Return a ReST docstring format for the Python arguments in TEXT.
 
 Optional argument MAKE-FIELDS will create yasnippet compatible
 field that the can be jumped to upon further expansion."
   (let* ((indent (concat "\n" (make-string (current-column) 32)))
-         (args (python-split-args text))
+         (args (yasnippet-radical-snippets--python-split-args text))
 	 (i 0)
 	 (nr (length args))
 	 (formatted-types
@@ -61,13 +61,13 @@ field that the can be jumped to upon further expansion."
        indent))))
 
 
-(defun python-args-to-google-docstring (text &optional make-fields)
+(defun yasnippet-radical-snippets--python-args-to-google-docstring (text &optional make-fields)
   "Return a Google docstring for the Python arguments in TEXT.
 
 Optional argument MAKE-FIELDS will create yasnippet compatible
 field that the can be jumped to upon further expansion."
   (let* ((indent (concat "\n" (make-string (current-column) 32)))
-         (args (python-split-args text))
+         (args (yasnippet-radical-snippets--python-split-args text))
     	 (nr 0)
          (formatted-args
     	  (mapconcat

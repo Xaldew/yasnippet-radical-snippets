@@ -8,7 +8,7 @@
 # --
 def ${1:name}($2):
     \"\"\"$3
-    ${2:$(python-args-to-google-docstring yas-text t)}
+    ${2:$(yasnippet-radical-snippets--python-args-to-google-docstring yas-text t)}
     ${5:Returns:
         $6
 }

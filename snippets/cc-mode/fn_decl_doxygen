@@ -7,7 +7,7 @@
 # contributor: Gustaf Waldemarson
 # --
 /** @brief $5
-    ${3:$(c++-doxy-docstring yas-text (yas-field-value 2) (yas-field-value 1) t)}
+    ${3:$(yasnippet-radical-snippets--c++-doxy-docstring yas-text (yas-field-value 2) (yas-field-value 1) t)}
 */
 ${1:type} ${2:name}(${3:args})${4: const};
 ${0:$$(let ((beg yas-snippet-beg)

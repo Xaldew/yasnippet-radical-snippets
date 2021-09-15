@@ -7,9 +7,11 @@
 ;;; Code:
 
 
-(defvar yas-start-point 0 "Point at the beginning of snippet expansion.")
+(defvar yasnippet-radical-snippets--yas-start-point 0
+  "Point at the beginning of snippet expansion.")
+
 (add-hook 'yas-before-expand-snippet-hook
-	  (lambda () (setq-local yas-start-point (point))))
+	  (lambda () (setq-local yasnippet-radical-snippets--yas-start-point (point))))
 
 
 (declare-function semantic-mode "semantic.el")
@@ -19,7 +21,7 @@
 (declare-function semantic-tag-class "semantic/tag.el")
 (declare-function semantic-tag-attributes "semantic/tag.el")
 
-(defun c++-split-args (fn-name arg-string)
+(defun yasnippet-radical-snippets--c++-split-args (fn-name arg-string)
   "Split a C++ argument string into a list of names.
 
 FN-NAME is the name of the function.  ARG-STRING is the string
@@ -43,7 +45,7 @@ containing the function arguments."
 	    (split-string arg-string "[[:blank:]]*,[[:blank:]]*" t))))
 
 
-(defun c++-doxy-docstring (text fn-name return-value &optional make-fields)
+(defun yasnippet-radical-snippets--c++-doxy-docstring (text fn-name return-value &optional make-fields)
   "Return docstring format for the C++ arguments in TEXT.
 
 FN-NAME is the name of the function.
@@ -53,7 +55,7 @@ RETURN-VALUE is a string symbolizing the return value.
 If MAKE-FIELDS is non-nil to determine if we should create
 additional fields for `yasnippet'."
   (let* ((indent (concat "\n" (make-string (current-column) 32)))
-         (args (c++-split-args fn-name text))
+         (args (yasnippet-radical-snippets--c++-split-args fn-name text))
          (max-len (if args
 		      (apply 'max (mapcar (lambda (x) (length x)) args))
 		    0))
@@ -82,7 +84,7 @@ additional fields for `yasnippet'."
 
 (declare-function c-brace-newlines "cc-cmds")
 
-(defun yas-cc-mode-brace (brace syntax)
+(defun yasnippet-radical-snippets--yas-cc-mode-brace (brace syntax)
   "Determine the open BRACE and newline locations inside a snippet.
 
    BRACE is a string with the brace character(s) to insert.
@@ -97,7 +99,7 @@ additional fields for `yasnippet'."
    used to determine if a newline should be placed before and/or
    after the opening brace(s)."
   (let* ((indent (concat "\n" (make-string (current-column) 32)))
-	 (ctx `((,syntax ,yas-start-point)))
+	 (ctx `((,syntax ,yasnippet-radical-snippets--yas-start-point)))
 	 (actions (c-brace-newlines ctx)))
     (concat
      (if (memq 'before actions)
