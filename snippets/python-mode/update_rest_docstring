@@ -24,7 +24,7 @@
           (concat "\"\"\"" indent))
         (yasnippet-radical-snippets--python-args-to-reST-docstring string nil)
         indent
-        (yasnippet-radical-snippets--python-arg-types-to-reST-docstring string nil)
+        (yasnippet-radical-snippets--python-types-to-reST-docstring string nil)
         (when (not (string= "" string))
           indent)
         ".. Returns:"
