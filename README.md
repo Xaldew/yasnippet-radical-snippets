@@ -34,8 +34,7 @@ snippet in your `.emacs`:
 ```
 (use-package yasnippet-radical-snippets
   :ensure t
-  :defer t
-  :requires yasnippet
+  :after yasnippet
   :config
   (yasnippet-radical-snippets-initialize))
 ```
