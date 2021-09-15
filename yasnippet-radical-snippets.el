@@ -64,12 +64,6 @@ customizable variable used for a snippet expansion.  See Info
 node `(elisp)Customization Types'."
   :group 'yasnippet)
 
-
-;;;###autoload
-(eval-after-load 'yasnippet
-  '(yasnippet-radical-snippets-initialize))
-
-
 (provide 'yasnippet-radical-snippets)
 
 ;;; yasnippet-radical-snippets.el ends here

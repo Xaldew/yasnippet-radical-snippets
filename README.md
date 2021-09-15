@@ -32,9 +32,12 @@ Alternatively, you can also install the package using e.g.
 snippet in your `.emacs`:
 
 ```
-  (use-package yasnippet-radical-snippets
-    :ensure t
-    :defer t)
+(use-package yasnippet-radical-snippets
+  :ensure t
+  :defer t
+  :requires yasnippet
+  :config
+  (yasnippet-radical-snippets-initialize))
 ```
 
 # Examples
