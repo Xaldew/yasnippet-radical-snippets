@@ -85,6 +85,12 @@ available.
 
 ![C++ Function Doxygen](./img/cxx_fn_doxygen.gif)
 
+
+# Py-snippets
+
+After some discussion with the MELPA maintainers, the Python snippets copied
+into a separate [repository](https://github.com/Xaldew/py-snippets).
+
 # Contributing
 
 If you have a similarly interesting snippet that you think is too complex for a
